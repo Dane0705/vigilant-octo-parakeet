@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>辛味拉麵</title>
+    <link rel="stylesheet" href="./slick-master/slick.css">
+    <link rel="stylesheet" href="./slick-master/slick-theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="slick-master/slick/slick.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{ 
+            position: relative;
+        }
+        @media screen and (min-width:320px) {
+            nav{
+                height: 100px;
+                line-height: 100px;
+                width: 100%;
+                position: fixed;
+                background-color:#024d64;
+                letter-spacing: 2px;
+                z-index: 999;
+            }
+            .logo{
+                width: 250px;
+                margin: auto;
+                text-align: center;
+            }
+            .logo img{
+                width: 100%;
+            }
+            .nav-links{
+                display: none;
+                transition: 0.5s ease-in;
+                height: 100vh;
+                margin-left: 27px;
+                padding: 0px 120px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                position: absolute;
+                right: -350px;
+                z-index: -18;
+                background-color: #024d64;
+                background-size: cover;
+                text-align: center;
+                margin-top: 100px;
+            }
+            .nav-links a{
+                text-decoration: none;
+                color: #999999;
+            }
+            .nav-links a:hover{
+                color: white;
+                transition: .5s;
+            }
+            .nav-links li{
+                list-style: none;
+                width: 110px;
+                opacity:0 ;
+            } 
+            .menu-wrap{
+                margin-top: -100px;
+            }
+            /* nav END */
+            /* footer */
+            footer{
+                width: 100%;
+                background-color:#003366;
+                text-align: center;
+                font-size: 14px;
+                position: absolute;
+                z-index: -20;
+            }
+            footer .icon img{
+                width: 30px;
+            }
+            footer .contact{
+                color: white;
+            }
+            footer p{
+                margin-bottom: -2px;
+            }
+            footer a{
+                display: block;
+            }
+            .copyright{
+                margin-top: 10px;
+            }
+            .copyright img{
+                width: 100px;
+            }
+            .icons{
+                width: 70%;
+            }
+            /* hamberger */
+            .burger{
+                cursor: pointer;
+                margin-top: 40px;
+                padding-right: 15px;
+            }
+            .burger div{
+                width: 25px;
+                height: 2px;
+                background-color: white;
+                margin: 5px;
+                transition: .3s;
+            }
+        }
+        @media screen and (min-width:1024px) {
+            .logo{
+                width: 240px;
+                margin: 0px;
+                margin-left: 25px;
+            }
+            .logo img{
+                width: 180px;
+                margin-top: -5px;
+            }
+            .nav-links{
+                width: 720px;
+                transform: translateX(-350px) ;
+                padding:0px;
+                display: flex;
+                flex-direction: row;
+                background-image: none;
+                /* justify-content: space-around; */
+                height: 100px;
+                z-index: 1;
+                margin-top: 0px;
+                font-size: 14px;
+            }
+            .menu-wrap{
+                width: 100%;
+                transform: translateX(0px) ;
+                padding:0px;
+                display: flex;
+                flex-direction: row;
+                background-image: none;
+                justify-content: space-around;
+                z-index: 1;
+                margin-top: 0px;
+                margin-right: 25px;
+            }
+            .menu-wrap img{
+                width: 160px;
+            }
+            nav li:nth-child(1) { 
+                width: 112px;
+                opacity:1 ;
+            }
+            nav li:nth-child(2) { 
+                width: 112px;
+                opacity:1 ;
+            }
+            nav li:nth-child(3) { 
+                width: 80px;
+                opacity:1 ;
+            }
+            .nav-links a{
+                display: block;
+                cursor: pointer;
+            }
+            .burger{
+                display: none;
+            }
+            /* slider */
+            .slider{
+                padding-top: 100px;
+            }
+            .slider img{
+                width: 100%;
+            }
+            /* faith */
+            #faith{
+                line-height: 40px;
+            }
+            #faith strong{
+                font-weight: 400;
+                color: #942000;
+                font-size: 26px;
+            }
+            #faith b{
+                font-weight: 400;
+            }
+            /* article */
+            article{
+            margin-top: 100px;
+            }
+            article .news{
+                float: left;
+            }
+            article .more{
+                display: inline-block;
+                color: #999999;
+                text-decoration: none;
+                font-size: 16px;
+                float: right;
+            }
+            article .main{
+                font-size: 18px;
+            }
+            article a:hover{
+                text-decoration: none;
+            }
+            article .a_item{
+                width: 100%;
+                min-height: 70px;
+                padding: 20px 15px 20px 50px;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                color: #333333;
+                border-bottom: 1px solid #dddddd;
+            }
+            article .date,
+            article .date:hover{
+                width: 135px;
+                padding-right: 50px;
+                color: #999999;
+            }
+            article .type{
+                width: 190px;
+                padding-right: 50px;
+                color: #999999;
+            }
+            article .txt:hover{
+                width: calc(100% - 325px);
+                color: #942000;
+            }
+            article .situation{
+                margin-left: auto;
+            }
+            article .situation img{
+                width: 80px;
+            }
+            /* ***************************************** */
+            #banner-2 {
+                display: block;
+            }
+            #banner-2 a{
+                display: block;
+                background-color: black;
+            }
+            #banner-2 img{
+                width: 100%;
+            }
+            #banner-2 img:hover{
+                opacity: .8;
+            }
+            #banner-2 .bp{
+                position: relative;
+            }
+            #banner-2 .banner-txt{
+                position: absolute;
+                color: white;
+                bottom: 5px;
+                left: 30px;
+                font-size: 14px;
+            }
+            /* Footer */
+            footer{
+                text-align: left;
+                font-size: 16px;
+                background-image: url("./img/footer-bg_工作區域 1.png");
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            footer i{
+                font-size: 30px;
+                padding-right: 20px;
+            }
+            footer p{
+                margin-bottom: 15px;
+            }
+            .copyright{
+                background-color: #942000;
+            }
+        }
+        @media screen and (min-width:1120px) {
+            .logo{
+                width: 300px;
+                margin-left: 30px;
+            }
+            .nav-links{
+                width: 990px;
+                font-size: 16px;
+            }
+        }
+        .nav-active{
+            position: absolute;
+            right: 0px;
+            transition: ease-in .5s;
+        }
+        @keyframes navLinkFade{
+            from{
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+        .toggle .line1{
+            transform: rotate(-45deg) translate(-5px,5px);
+        }
+        .toggle .line2{
+            opacity: 0;
+        }
+        .toggle .line3{
+            transform: rotate(45deg) translate(-5px,-5px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+        <div class="row">
+            <div class="logo">
+                <a href="#"><img src="./img/辛味.png" alt="辛味拉麵"></a>
+            </div>
+            <ul class="nav-links pt-1">
+                <div class="menu-wrap">
+                    <li><a href="#"><img src="./img/精選菜單png_工作區域 1.png" alt=""></a></li>
+                    <li><a href="#"><img src="./img/最新活動_工作區域 1.png" alt=""></a></li>
+                    <li><a href="#"><img src="./img/加盟專區_工作區域 1.png" alt=""></a></li>
+                </div>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="slider">
+        <img src="./img/辛味拉麵Banner-1_工作區域 1.jpg" alt="">
+        <img src="./img/辛味拉麵Banner-2_工作區域 1.jpg" alt="">
+        <img src="./img/辛味拉麵Banner-3_工作區域 1.jpg" alt="">
+    </div>
+    <div class="container my-3" id="faith">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="./img/faith.png" alt="" class="w-100">
+            </div>
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <div class="content">
+                    <p>  2020年1月，<strong>辛味拉麵</strong> 位於台中大里成立第一間店鋪，<br>
+                    老闆 ──  陳志祥先生一直以來對日本文化有著濃厚的情感，不斷嘗試將日式拉麵改良為台灣人喜歡的口味後再以每日熬煮的高湯搭配店家自製秘滷的叉燒，
+                    為的就是結合台灣人的溫度與日式拉麵的堅持。</p>
+
+                    老闆總笑著說：「我們的目標是希望以親民的價格，讓更多人可以享用一碗拉麵！」，辛味拉麵也善盡社會責任，與“ 台灣之家 ” 合作一同為社會敬一份心力。<br>
+                    <p class="text-right slogan"><b>辛味拉麵 ── 匠人之辛，實在用心。</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <article class="container d-md-block d-none my-5">
+            <div class="row">
+                <div class="col-12 pb-4" style="border-bottom: #dddddd 1px solid;">
+                    <h5 class="news">最新消息</h5>
+                    <a href="#" class="more">More >></a>
+                </div>
+                <div class="w-100">
+                    <a href="#" class="a_item">
+                        <div class="date">2020/08/25</div>
+                        <div class="type">本月主打</div>
+                        <div class="txt">無敵拉麵只要59元 | 限量150碗 賣完為止</div>
+                        <div class="situation"><img src="./img/situation o_工作區域 1.png" alt=""></div>
+                    </a>
+                    <a href="#" class="a_item">
+                        <div class="date">2020/04/17</div>
+                        <div class="type">好康優惠</div>
+                        <div class="txt">感恩母親節 午餐時段全店全品項主餐 59 元 ！</div>
+                        <div class="situation"><img src="./img/situation x_工作區域 1.png" alt=""></div>
+                    </a>
+                    <a href="#" class="a_item">
+                        <div class="date"></div>
+                        <div class="type"></div>
+                        <div class="txt"></div>
+                        <div class="situation"></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </article>
+    <div id="banner-2" class="container-fluid mb-3">
+        <div class="row">
+            <div class="col-md-6 col-12 p-0">
+                <div class="col-12  p-1 bp">
+                    <a href="#">
+                        <img src="./img/2020-04-02.png" alt="">
+                    </a>
+                    <div class="banner-txt">
+                        <p>商品名稱</p>
+                        <p>ooxx 日文</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 p-0">
+                <div class="col-md-6 col-12 p-1 bp" style="float: left;">
+                    <a href="#">
+                        <img src="./img/2020-04-02 (1).png" alt="">
+                    </a>
+                    <div class="banner-txt">
+                        <p>商品名稱</p>
+                        <p>ooxx 日文</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 p-1 bp" style="float: left;">
+                    <a href="#">
+                        <img src="./img/2020-04-02 (3).png" alt="">
+                    </a>
+                    <div class="banner-txt">
+                        <p>商品名稱</p>
+                        <p>ooxx 日文</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 p-1 bp" style="float: left;">
+                    <a href="#">
+                        <img src="./img/2020-04-02-2.png" alt="">
+                    </a>
+                    <div class="banner-txt">
+                        <p>商品名稱</p>
+                        <p>ooxx 日文</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-12 p-1 bp" style="float: left;">
+                    <a href="#">
+                        <img src="./img/106110201_181521663389526_8458521773783654991_n (1).png" alt="">
+                    </a>
+                    <div class="banner-txt">
+                        <p>商品名稱</p>
+                        <p>ooxx 日文</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="container-fluid">
+        <div class="row pb-3">
+            <div class="col-md-4 col-12 d-flex justify-content-center pl-md-5 footer-logo">
+                <img src="./img/辛味.png" alt="辛味拉麵">
+            </div>
+            <div class="col-md-4 col-12 pt-4 px-0">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3497800431924!2d120.69706201497294!3d24.089191881666185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d072c913459%3A0x87d4426a4ccf399d!2z6L6b5ZGz5ouJ6bq1WGlud2Vp!5e0!3m2!1szh-TW!2stw!4v1599462327831!5m2!1szh-TW!2stw" class="w-100 h-100" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+                </iframe>
+            </div>
+            <div class="col-md-4 col-12 d-flex justify-content-center align-items-center">
+                <div class="contact pt-4 ">
+                    <p><i class="fab fa-line"></i>ID: ooxx</p>
+                    <p><i class="fas fa-phone-square-alt"></i>0966921559</p>
+                    <p><i class="fas fa-envelope"></i>sec198988@gmail.com</p>
+                    <p><i class="far fa-clock"></i>上午11:30-下午1:30/下午5:00-下午11:00</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 p-0 text-center text-white">
+                <div class="copyright">
+                    &copy;  辛味拉麵 版權所有. All right reserved .
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const navSlide = () =>{
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+        const navlinks = document.querySelectorAll('.nav-links li');
+
+        burger.addEventListener('click',() => {
+            // Toggle Nav
+            nav.classList.toggle('nav-active');
+
+            // Animate Links
+            navlinks.forEach( (link, index) => {
+                if( link.style.animation){
+                    link.style.animation='';
+                }else{
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7+0.5}s `;
+                }
+            });
+        burger.classList.toggle('toggle');
+        });
+    }
+    navSlide();
+    </script>
+    <script>
+        $(document).ready(function(){
+            $('.slider').slick({
+                dots: true,
+                autoplay:true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+            })
+        })
+    </script>
+</body>
+</html>
