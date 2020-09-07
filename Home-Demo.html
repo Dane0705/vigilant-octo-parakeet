@@ -30,7 +30,7 @@
                 z-index: 999;
             }
             .logo{
-                width: 250px;
+                width: 150px;
                 margin: auto;
                 text-align: center;
             }
@@ -47,7 +47,7 @@
                 flex-direction: column;
                 justify-content: center;
                 position: absolute;
-                right: -350px;
+                right: -400px;
                 z-index: -18;
                 background-color: #024d64;
                 background-size: cover;
@@ -63,43 +63,87 @@
                 transition: .5s;
             }
             .nav-links li{
+                width: 100%;
                 list-style: none;
-                width: 110px;
+                padding: 20px 0px;
                 opacity:0 ;
             } 
             .menu-wrap{
-                margin-top: -100px;
+                margin-top: -200px;
+            }
+            .menu-wrap img{
+                width: 160px;
             }
             /* nav END */
+            /* slider */
+            .slider{
+                padding-top: 100px;
+            }
+            .slider img{
+                width: 100%;
+            }
+             /* ***************************************** */
+            #banner-2 {
+                display: block;
+            }
+            #banner-2 a{
+                display: block;
+                background-color: black;
+            }
+            #banner-2 img{
+                width: 100%;
+            }
+            #banner-2 img:hover{
+                opacity: .8;
+            }
+            #banner-2 .bp{
+                position: relative;
+            }
+            #banner-2 .banner-txt{
+                position: absolute;
+                color: white;
+                bottom: 5px;
+                left: 30px;
+                font-size: 14px;
+            }
+            /* faith */
+            #faith{
+                line-height: 30px;
+            }
+            #faith strong{
+                font-weight: 400;
+                color: #942000;
+                font-size: 26px;
+            }
+            #faith b{
+                font-weight: 400;
+            }
             /* footer */
             footer{
-                width: 100%;
-                background-color:#003366;
-                text-align: center;
-                font-size: 14px;
-                position: absolute;
-                z-index: -20;
+                text-align: left;
+                font-size: 16px;
+                background-image: url("./img/footer-bg_工作區域 1.png");
+                background-size: cover;
+                background-repeat: no-repeat;
             }
-            footer .icon img{
-                width: 30px;
+            footer iframe{
+                height: 300px;
+            }
+            footer img{
+                width: 50%;
             }
             footer .contact{
                 color: white;
             }
             footer p{
-                margin-bottom: -2px;
+                margin-bottom: 10px;
             }
-            footer a{
-                display: block;
+            footer i{
+                font-size: 30px;
+                padding-right: 20px;
             }
             .copyright{
-                margin-top: 10px;
-            }
-            .copyright img{
-                width: 100px;
-            }
-            .icons{
-                width: 70%;
+                background-color: #942000;
             }
             /* hamberger */
             .burger{
@@ -113,6 +157,74 @@
                 background-color: white;
                 margin: 5px;
                 transition: .3s;
+            }
+        }
+        @media screen and (min-width:768px){
+            /* faith */
+            #faith{
+                line-height: 20px;
+            }
+            #faith strong{
+                font-weight: 400;
+                color: #942000;
+                font-size: 26px;
+            }
+            #faith b{
+                font-weight: 400;
+            }
+            /* article */
+            article{
+                margin-top: 100px;
+            }
+            article .news{
+                float: left;
+            }
+            article .more{
+                display: inline-block;
+                color: #999999;
+                text-decoration: none;
+                font-size: 16px;
+                float: right;
+            }
+            article .main{
+                font-size: 18px;
+            }
+            article a:hover{
+                text-decoration: none;
+            }
+            article .a_item{
+                width: 100%;
+                min-height: 70px;
+                padding: 20px 15px 20px 50px;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+                color: #333333;
+                border-bottom: 1px solid #dddddd;
+            }
+            article .date,
+            article .date:hover{
+                width: 135px;
+                padding-right: 50px;
+                color: #999999;
+            }
+            article .type{
+                width: 190px;
+                padding-right: 50px;
+                color: #999999;
+            }
+            article .txt:hover{
+                width: calc(100% - 325px);
+                color: #942000;
+            }
+            article .situation{
+                margin-left: auto;
+            }
+            article .situation img{
+                width: 80px;
+            }
+            footer img{
+                width: 268px;
             }
         }
         @media screen and (min-width:1024px) {
@@ -132,12 +244,14 @@
                 display: flex;
                 flex-direction: row;
                 background-image: none;
-                /* justify-content: space-around; */
                 height: 100px;
                 z-index: 1;
                 margin-top: 0px;
                 font-size: 14px;
             }
+            .nav-links li{
+                padding: 0px;
+            } 
             .menu-wrap{
                 width: 100%;
                 transform: translateX(0px) ;
@@ -154,15 +268,12 @@
                 width: 160px;
             }
             nav li:nth-child(1) { 
-                width: 112px;
                 opacity:1 ;
             }
             nav li:nth-child(2) { 
-                width: 112px;
                 opacity:1 ;
             }
             nav li:nth-child(3) { 
-                width: 80px;
                 opacity:1 ;
             }
             .nav-links a{
@@ -171,13 +282,6 @@
             }
             .burger{
                 display: none;
-            }
-            /* slider */
-            .slider{
-                padding-top: 100px;
-            }
-            .slider img{
-                width: 100%;
             }
             /* faith */
             #faith{
@@ -242,47 +346,12 @@
             article .situation img{
                 width: 80px;
             }
-            /* ***************************************** */
-            #banner-2 {
-                display: block;
-            }
-            #banner-2 a{
-                display: block;
-                background-color: black;
-            }
-            #banner-2 img{
-                width: 100%;
-            }
-            #banner-2 img:hover{
-                opacity: .8;
-            }
-            #banner-2 .bp{
-                position: relative;
-            }
-            #banner-2 .banner-txt{
-                position: absolute;
-                color: white;
-                bottom: 5px;
-                left: 30px;
-                font-size: 14px;
-            }
             /* Footer */
-            footer{
-                text-align: left;
-                font-size: 16px;
-                background-image: url("./img/footer-bg_工作區域 1.png");
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
-            footer i{
-                font-size: 30px;
-                padding-right: 20px;
-            }
             footer p{
                 margin-bottom: 15px;
             }
-            .copyright{
-                background-color: #942000;
+            footer img{
+                width: 100%;
             }
         }
         @media screen and (min-width:1120px) {
@@ -349,15 +418,15 @@
     <div class="container my-3" id="faith">
         <div class="row">
             <div class="col-md-6">
-                <img src="./img/faith.png" alt="" class="w-100">
+                <img src="./img/faith.png" alt="" class="w-100 d-md-block d-none">
             </div>
             <div class="col-md-6 d-flex justify-content-center align-items-center">
                 <div class="content">
-                    <p>  2020年1月，<strong>辛味拉麵</strong> 位於台中大里成立第一間店鋪，<br>
+                    <p>  2020年1月，<strong>辛味拉麵</strong> 位於台中大里成立第一間店鋪，<br class="d-md-block d-none">
                     老闆 ──  陳志祥先生一直以來對日本文化有著濃厚的情感，不斷嘗試將日式拉麵改良為台灣人喜歡的口味後再以每日熬煮的高湯搭配店家自製秘滷的叉燒，
                     為的就是結合台灣人的溫度與日式拉麵的堅持。</p>
 
-                    老闆總笑著說：「我們的目標是希望以親民的價格，讓更多人可以享用一碗拉麵！」，辛味拉麵也善盡社會責任，與“ 台灣之家 ” 合作一同為社會敬一份心力。<br>
+                    老闆總笑著說：「我們的目標是希望以親民的價格，讓更多人可以享用一碗拉麵！」，辛味拉麵也善盡社會責任，與“ 希望之家 ” 合作一同為社會敬一份心力。<br>
                     <p class="text-right slogan"><b>辛味拉麵 ── 匠人之辛，實在用心。</b></p>
                 </div>
             </div>
@@ -448,10 +517,10 @@
     <footer class="container-fluid">
         <div class="row pb-3">
             <div class="col-md-4 col-12 d-flex justify-content-center pl-md-5 footer-logo">
-                <img src="./img/辛味.png" alt="辛味拉麵">
+                <img src="./img/辛味.png" alt="辛味拉麵" class="d-md-block d-none">
             </div>
-            <div class="col-md-4 col-12 pt-4 px-0">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3497800431924!2d120.69706201497294!3d24.089191881666185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d072c913459%3A0x87d4426a4ccf399d!2z6L6b5ZGz5ouJ6bq1WGlud2Vp!5e0!3m2!1szh-TW!2stw!4v1599462327831!5m2!1szh-TW!2stw" class="w-100 h-100" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+            <div class="col-md-4 col-12 pt-md-4 pt-0 px-0">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3497800431924!2d120.69706201497294!3d24.089191881666185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d072c913459%3A0x87d4426a4ccf399d!2z6L6b5ZGz5ouJ6bq1WGlud2Vp!5e0!3m2!1szh-TW!2stw!4v1599462327831!5m2!1szh-TW!2stw" class="w-100" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
                 </iframe>
             </div>
             <div class="col-md-4 col-12 d-flex justify-content-center align-items-center">
